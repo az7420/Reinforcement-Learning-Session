@@ -1,0 +1,61 @@
+/* feedback.css (Cyberpunk Nebula) */
+.feedback-toast {
+  position: absolute;
+  top: 38%; left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 0 0 20px currentColor;
+  animation: toastRise 1.8s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+@keyframes toastRise {
+  0%   { opacity:0; transform:translateX(-50%) translateY(20px) scale(0.8); }
+  15%  { opacity:1; transform:translateX(-50%) translateY(0) scale(1.1); }
+  30%  { transform:translateX(-50%) translateY(0) scale(1); }
+  70%  { opacity:1; transform:translateX(-50%) translateY(-20px); }
+  100% { opacity:0; transform:translateX(-50%) translateY(-50px); }
+}
+
+.fb-goal   { color: #00f5d4; }
+.fb-trap   { color: #f72585; }
+.fb-step   { color: #64748b; font-size: 1rem; }
+.fb-coin   { color: #ffbe0b; }
+.fb-ice    { color: #4cc9f0; }
+.fb-warp   { color: #bf5fff; }
+.fb-boost  { color: #ff6b00; }
+
+/* AI narration bar */
+.feedback-ai-bar {
+  position: absolute;
+  top: 68px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+  pointer-events: none; white-space: nowrap;
+  background: rgba(8, 4, 20, 0.92);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 5px 16px 5px 12px;
+  box-shadow: 0 0 18px -4px currentColor;
+  animation: aiBarSlide 0.55s ease forwards;
+  backdrop-filter: blur(12px);
+}
+@keyframes aiBarSlide {
+  from { opacity:0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity:1; transform: translateX(-50%) translateY(0); }
+}
+.fb-ai-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  background: rgba(0,245,212,0.15);
+  color: #00f5d4;
+  border: 1px solid rgba(0,245,212,0.4);
+  border-radius: 4px;
+  padding: 1px 6px;
+}

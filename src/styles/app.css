@@ -1,0 +1,17 @@
+/* ─────────────────────────────────────────────────────────────
+   app.css  –  Layout wrappers (Cyberpunk Nebula)
+───────────────────────────────────────────────────────────── */
+
+.app-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--c-bg-gradient);
+}
+
+.canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}

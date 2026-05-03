@@ -1,0 +1,63 @@
+/* ─────────────────────────────────────────────────────────────
+   touchcontrols.css  –  On-screen D-pad
+───────────────────────────────────────────────────────────── */
+
+.dpad-wrapper {
+  position: absolute;
+  bottom: 80px;
+  left: 24px;
+  z-index: 15;
+  pointer-events: auto;
+
+  /* Hide on desktop, show on touch devices */
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .dpad-wrapper { display: block; }
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.dpad-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dpad-btn {
+  width: 52px;
+  height: 52px;
+  background: rgba(13,17,23,0.88);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  color: var(--c-text);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  backdrop-filter: blur(10px);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dpad-btn:active {
+  background: rgba(99,102,241,0.3);
+  border-color: var(--c-indigo);
+  transform: scale(0.92);
+}
+
+.dpad-center {
+  width: 52px;
+  height: 52px;
+  background: rgba(13,17,23,0.5);
+  border-radius: 10px;
+  border: 1px solid var(--c-border);
+}

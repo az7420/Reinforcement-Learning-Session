@@ -1,0 +1,237 @@
+/* ── Neon Serpent Styles ── */
+
+.ns-screen {
+  position: fixed;
+  inset: 0;
+  background: #020108;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 320;
+  font-family: 'Inter', sans-serif;
+}
+
+.ns-container {
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ns-header { text-align: center; position: relative; }
+
+.ns-back-btn {
+  position: absolute;
+  top: 0; left: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #64748b;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.ns-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #00f5d4;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+.ns-title { font-size: 1.8rem; font-weight: 900; margin: 0; color: #fff; }
+.ns-subtitle { font-size: 0.8rem; color: #94a3b8; }
+
+.ns-main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+}
+
+.ns-grid {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 2px;
+  background: rgba(0, 245, 212, 0.05);
+  padding: 4px;
+  border: 1px solid rgba(0, 245, 212, 0.1);
+  aspect-ratio: 1;
+}
+
+.ns-cell {
+  background: rgba(13, 8, 36, 0.5);
+  border-radius: 2px;
+}
+
+.ns-cell.snake { background: #00f5d4; box-shadow: 0 0 8px rgba(0, 245, 212, 0.4); }
+.ns-cell.head { background: #fff; box-shadow: 0 0 12px #fff; z-index: 2; }
+.ns-cell.food { 
+  background: #f72585; 
+  box-shadow: 0 0 15px #f72585; 
+  animation: ns-pulse 0.8s infinite alternate;
+}
+
+@keyframes ns-pulse {
+  from { transform: scale(0.7); }
+  to { transform: scale(1); }
+}
+
+.ns-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ns-nexus {
+  background: rgba(13, 8, 36, 0.8);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ns-nexus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ns-nexus-header span {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #00f5d4;
+  letter-spacing: 0.1em;
+}
+
+.ns-nexus-status {
+  font-size: 0.55rem;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.ns-nexus-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ns-nexus-svg line {
+  transition: all 0.2s;
+}
+
+.ns-nexus-svg circle {
+  transition: all 0.2s;
+}
+
+.ns-stat {
+  background: rgba(13, 8, 36, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.ns-label { font-size: 0.65rem; color: #64748b; letter-spacing: 0.1em; }
+.ns-value { font-size: 2rem; font-weight: 900; color: #00f5d4; display: block; }
+
+.ns-q-panel {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.ns-q-panel h3 { font-size: 0.7rem; color: #94a3b8; margin-top: 0; margin-bottom: 12px; text-align: center; }
+
+.ns-concept-box {
+  background: rgba(0, 245, 212, 0.05);
+  border: 1px solid rgba(0, 245, 212, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.ns-concept-tag {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #00f5d4;
+  letter-spacing: 0.1em;
+}
+
+.ns-concept-box h3 {
+  font-size: 0.85rem !important;
+  color: #fff !important;
+  margin: 4px 0 8px !important;
+  text-align: left !important;
+}
+
+.ns-concept-box p {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ns-concept-box p strong {
+  color: #fff;
+}
+
+.ns-q-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ns-q-item {
+  background: rgba(13, 8, 36, 0.6);
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 3px solid #00f5d4;
+}
+
+.ns-q-item span { font-size: 0.6rem; color: #64748b; font-weight: 800; }
+.ns-q-item strong { font-size: 1.1rem; color: #fff; font-family: 'JetBrains Mono', monospace; }
+
+.ns-q-hint { font-size: 0.6rem; color: #64748b; text-align: center; margin-top: 10px; }
+
+.ns-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.ns-modal {
+  background: #0d0824;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #00f5d4;
+  max-width: 500px;
+  box-shadow: 0 0 50px rgba(0, 245, 212, 0.2);
+}
+
+.ns-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.ns-btn.primary { background: #00f5d4; color: #000; }
+.ns-btn.secondary { background: rgba(255,255,255,0.1); color: #fff; }

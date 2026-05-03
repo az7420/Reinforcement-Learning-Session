@@ -1,0 +1,269 @@
+/* ── Glitch Runner Styles ── */
+
+.gr-screen {
+  position: fixed;
+  inset: 0;
+  background: #020108;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 310;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.gr-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.gr-header {
+  text-align: center;
+  position: relative;
+}
+
+.gr-back-btn {
+  position: absolute;
+  top: 0; left: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #64748b;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.gr-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #f72585;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+.gr-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+  color: #4cc9f0;
+  text-shadow: 0 0 10px rgba(76, 201, 240, 0.3);
+}
+
+.gr-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.gr-main {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 20px;
+}
+
+.gr-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  background: rgba(13, 8, 36, 0.4);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(76, 201, 240, 0.1);
+}
+
+.gr-tile {
+  aspect-ratio: 1;
+  background: rgba(13, 8, 36, 0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.gr-tile.trap { background: rgba(247, 37, 133, 0.05); color: #f72585; border-color: rgba(247, 37, 133, 0.1); }
+.gr-tile.goal { background: rgba(0, 245, 212, 0.05); color: #00f5d4; border-color: rgba(0, 245, 212, 0.2); font-size: 1.5rem; }
+.gr-tile.player { background: rgba(76, 201, 240, 0.2); border-color: #4cc9f0; box-shadow: 0 0 15px rgba(76, 201, 240, 0.3); }
+
+.gr-player-dot {
+  width: 12px; height: 12px;
+  background: #4cc9f0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4cc9f0;
+  animation: gr-pulse 1s infinite alternate;
+}
+
+@keyframes gr-pulse {
+  from { transform: scale(0.8); opacity: 0.7; }
+  to { transform: scale(1.1); opacity: 1; }
+}
+
+.gr-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gr-stat {
+  background: rgba(13, 8, 36, 0.8);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gr-label { font-size: 0.6rem; color: #64748b; letter-spacing: 0.1em; }
+.gr-value { font-size: 1.5rem; font-weight: 900; color: #fff; }
+
+.gr-log {
+  background: #000;
+  border-radius: 8px;
+  padding: 12px;
+  height: 200px;
+  border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+.gr-log h3 { font-size: 0.65rem; color: #4cc9f0; margin-top: 0; margin-bottom: 8px; }
+
+.gr-log-entry {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.gr-log-entry.success { color: #00f5d4; background: rgba(0, 245, 212, 0.05); }
+.gr-log-entry.glitch { 
+  color: #f72585; 
+  background: rgba(247, 37, 133, 0.05); 
+  animation: gr-flicker 0.1s infinite alternate;
+}
+
+@keyframes gr-flicker {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+.gr-grid.shaking {
+  animation: gr-shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes gr-shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.gr-objective {
+  background: rgba(255,255,255,0.03);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.gr-objective h3 { 
+  font-size: 0.6rem; 
+  color: #64748b; 
+  margin: 0 0 8px; 
+  letter-spacing: 0.1em;
+}
+
+.gr-objective ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gr-objective li {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.gr-objective li span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.gr-concept-note {
+  background: rgba(76, 201, 240, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid #4cc9f0;
+}
+
+.gr-concept-note h4 {
+  font-size: 0.65rem;
+  color: #4cc9f0;
+  margin: 0 0 4px;
+}
+
+.gr-strategy {
+  background: rgba(255, 190, 11, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 190, 11, 0.2);
+}
+
+.gr-strategy h3 {
+  font-size: 0.65rem;
+  color: #ffbe0b;
+  margin: 0 0 6px;
+}
+
+.gr-strategy p {
+  font-size: 0.6rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.gr-strategy strong {
+  color: #fff;
+}
+
+.gr-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.gr-modal {
+  background: #0d0824;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #4cc9f0;
+  max-width: 400px;
+}
+
+.gr-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.gr-btn.primary { background: #4cc9f0; color: #000; }
+.gr-btn.secondary { background: #f72585; color: #fff; }

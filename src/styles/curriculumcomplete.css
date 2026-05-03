@@ -1,0 +1,250 @@
+/* ── Curriculum Complete Styles ── */
+
+.cc-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top right, #0d0824 0%, #04020e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 500;
+  overflow-y: auto;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.cc-container {
+  width: 100%;
+  max-width: 1000px;
+  animation: cc-fade-up 0.8s ease-out;
+}
+
+@keyframes cc-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cc-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cc-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(0, 245, 212, 0.1);
+  border: 1px solid rgba(0, 245, 212, 0.4);
+  color: #00f5d4;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+}
+
+.cc-title {
+  font-size: 4rem;
+  font-weight: 950;
+  color: #fff;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 0.9;
+  background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cc-subtitle {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 24px auto 0;
+  line-height: 1.6;
+}
+
+.cc-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.cc-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+}
+
+.cc-card h2, .cc-card h3 {
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.cc-card p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* ── Form ── */
+.cc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.cc-form input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.cc-form input:focus {
+  border-color: #00f5d4;
+}
+
+.cc-btn {
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc-btn.primary {
+  background: #00f5d4;
+  color: #04020e;
+}
+
+.cc-btn.primary:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+}
+
+.cc-btn.primary.success {
+  background: #22c55e;
+  color: #fff;
+}
+
+.cc-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  width: 100%;
+}
+
+.cc-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cc-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── List ── */
+.cc-grad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cc-refresh {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.cc-list {
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.cc-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cc-list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.cc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: background 0.3s;
+}
+
+.cc-item:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.cc-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cc-rank {
+  color: #00f5d4;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.cc-name {
+  color: #fff;
+  font-weight: 700;
+}
+
+.cc-date {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.cc-info {
+  text-align: center;
+  color: #64748b;
+  padding: 40px 0;
+}
+
+.cc-flare {
+  position: fixed;
+  bottom: -10%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(0, 245, 212, 0.1) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .cc-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .cc-title {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,41 @@
+/* ─────────────────────────────────────────────────────────────
+   confetti.css  –  Goal particle burst
+───────────────────────────────────────────────────────────── */
+
+.confetti-root {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 45;
+  overflow: hidden;
+}
+
+.confetti-particle {
+  position: absolute;
+  background: var(--color, #818cf8);
+  animation: confetti-fly linear forwards;
+  transform-origin: center;
+  border-radius: 2px;
+}
+
+/* Shapes */
+.confetti-circle  { border-radius: 50%; }
+.confetti-rect    { border-radius: 2px; }
+.confetti-star    { border-radius: 1px; transform: rotate(45deg); }
+
+@keyframes confetti-fly {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) rotate(720deg) scale(0.3);
+    opacity: 0;
+  }
+}
